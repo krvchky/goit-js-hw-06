@@ -14,7 +14,7 @@ const images = [
 ];
 
 const galleryList = document.querySelector(".gallery");
-galerryList.style.listStyle = "none"
+galeryList.style.listStyle = "none"
 const elements = images
  .map(({ url,alt }) => 
    `<li><img class = "image" src = "${url}" alt = "${alt}" width = '300'></li>`
