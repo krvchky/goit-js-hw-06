@@ -13,14 +13,20 @@ const images = [
   },
 ];
 
-const galleryList = document.querySelector(".gallery");
-galeryList.style.listStyle = "none"
-const elements = images
- .map(({ url,alt }) => 
-   `<li><img class = "image" src = "${url}" alt = "${alt}" width = '300'></li>`
-)
- .join("")
-console.log(elements)
-galleryList.insertAdjacentHTML("beforeend", elements);
+const galleryEl = document.querySelector(".gallery");
+
+galleryEl.style.display = "flex"
+galleryEl.style.gap = "20px"
+galleryEl.style.listStyle = "none"
+
+const makeImadesMarkup = ({ url,alt }) =>  {
+  return 
+  `<li>
+  <img src = "${url}" alt = "${alt}" width = 300 />
+  </li>`
+}
+
+const makeImages = images.map(makeImadesMarkup).join(``)
+galleryEl.insertAdjacentHTML("afterbegin", makeImages);
 
 
