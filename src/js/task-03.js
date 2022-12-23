@@ -20,10 +20,12 @@ galleryEl.style.gap = "20px"
 galleryEl.style.listStyle = "none"
 
 const makeImadesMarkup = ({ url,alt }) =>  {
-  return 
-  `<li>
+  return `
+  <li>
   <img src = "${url}" alt = "${alt}" width = 300 />
-  </li>`
+  </li>
+  `;
+  
 }
 
 const makeImages = images.map(makeImadesMarkup).join(``)
